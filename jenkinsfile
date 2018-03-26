@@ -1,0 +1,10 @@
+pipeline{
+	agent any {
+	   stages('git'){
+	     steps{
+		step git 'https://github.com/amar50218/jult.git'
+		}
+	}	
+}
+}
+		 
