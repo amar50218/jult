@@ -1,3 +1,4 @@
 ehco "reply from user"
 read "$REPLAY"
 echo "$REPLAY"
+helo
