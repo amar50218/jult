@@ -4,6 +4,12 @@ pipeline{
 	     steps{
 		step git 'https://github.com/amar50218/jult.git'
 		}
+		tool {
+		   maven 2
+		}
+		step {
+		   sh 'mvn clean ,mvn built'
+	} 
 	}	
 }
 }
