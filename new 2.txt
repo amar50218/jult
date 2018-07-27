@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+pipeline{
+    agent any 
+    stages {
+        stage('checkout'){        //checkout stage to clone and polling
+            steps{
+                 dir('Path1') {
+                      git credentialsId: 'Credentail', url: 'https://github.com/somewhere/RepoOne.git'  //git url to clone with credential
+                     }
+                 dir('Path1') {
+                    svn credentialsId: 'credentail', url: 'svnurl' //SVN cloning 
+                     }
+                 }
+            steps{
+                bat '''
+                set ws1=Parh1\\folder1
+                set ws2=Path2\\folder2
+                set git_path=[gir path variables]
+                set svn_path=[svn path varibles]
+                echo ------path configuration done ------------
+                '''
+                }
+             }
+        stage('RTE'){
+              steps{
+            
+                 bat '''
+                 set code="F:\\BMW\\code"
+                 %code%\\git_test.bat
+                 echo code exicuted
+                 '''
+                 }
+              }
+        }
+
+}
